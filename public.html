@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Royal Vidyalaya</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Royal Vidyalaya</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About Us</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#contact" class="nav-link">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="full-screen">
+    <div class="home-content">
+      <h1>Welcome to Royal Vidyalaya</h1>
+      <p>Where learning meets excellence</p>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+  <div class="about-box">
+    <h2>About Us</h2>
+    <p>Royal Vidyalaya is a premier CBSE-affiliated institution dedicated to nurturing future leaders. We provide a strong academic foundation while fostering values, creativity, and independent thinking.</p>
+    <p>Our aim is to promote all-round development—intellectual, physical, emotional, and social—by offering co-curricular and extracurricular programs that enrich each student’s school experience.</p>
+    <p>We take pride in preserving our rich cultural heritage by instilling moral values and respect for traditions, preparing students to thrive in a global society with strong roots and a forward-looking mindset.</p>
+  </div>
+</section>
+
+  <section class="gallery-section" id="gallery">
+    <h2>Our School Gallery</h2>
+    <p>Moments of learning, joy, and creativity at Royal Vidyalaya</p>
+    
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\school1.jpg" alt="Event 1" /></div>
+      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\school2.jpg" alt="Event 2" /></div>
+      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\school3.jpg" alt="Event 3" /></div>
+      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\school4.jpg" alt="Event 4" /></div>
+      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\schhol5.jpg" alt="Event 5" /></div>
+      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\school6.jpg" alt="Event 6" /></div>
+    </div>
+  </section>
+
+    <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p>We'd love to hear from you. Please fill out the form below.</p>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+          <span class="error-message" id="nameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+          <span class="error-message" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required />
+          <span class="error-message" id="phoneError"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
+          <span class="error-message" id="messageError"></span>
+        </div>
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+      <div class="form-response" id="formResponse"></div>
+    </div>
+  </section>
+
+  <center>
+  <section>
+    <h2>Know more</h2>
+    <p>We’d love to hear from you. Reach out for any queries.</p>
+    <p><strong>Address:</strong> 5th street, Krishnapuram, India, Tamil Nadu</p>
+    <p><strong>Phone:</strong> 096008 05046</p>
+    <p><strong>Email:</strong> royalvidyalaya1986@gmail.com</p>
+  </section>
+  </center>             
+
+  <footer>
+    <p>&copy; 2025 Royal Vidyalaya. All rights reserved.</p>
+  </footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal School - Compact Chat Widget</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            height: 100vh;
+        }
+
+        /* Chat Widget Container */
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10000;
+            font-family: inherit;
+        }
+
+        /* Chat Toggle Button - Larger and More Visible */
+        .chat-toggle {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            animation: subtle-pulse 3s infinite;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.7);
+        }
+
+        .chat-toggle.active {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            transform: rotate(0deg);
+        }
+
+        @keyframes subtle-pulse {
+            0%, 100% { box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5); }
+            50% { box-shadow: 0 8px 35px rgba(102, 126, 234, 0.7); }
+        }
+
+        /* Notification Badge */
+        .notification-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 24px;
+            height: 24px;
+            background: #ff4757;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            border: 2px solid white;
+            animation: bounce-pulse 2s infinite;
+        }
+
+        @keyframes bounce-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Chat Container - Simplified */
+        .chat-container {
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+            width: 350px;
+            height: 480px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.8) translateY(20px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .chat-container.active {
+            display: flex;
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+
+        /* Simplified Header */
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-info h1 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .online-status {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            opacity: 0.8;
+        }
+
+        .close-btn:hover {
+            background: rgba(255,255,255,0.2);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Quick Actions - Simplified */
+        .quick-actions {
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .action-btn {
+            padding: 10px 12px;
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .action-btn:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-1px);
+        }
+
+        /* Chat Messages - Simplified */
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #fafafa;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-start;
+            max-width: 90%;
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .message.bot {
+            align-self: flex-start;
+        }
+
+        .avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+            margin: 0 8px;
+        }
+
+        .bot-avatar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .user-avatar {
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+            color: white;
+        }
+
+        .message-bubble {
+            padding: 12px 15px;
+            border-radius: 18px;
+            font-size: 13px;
+            line-height: 1.4;
+            word-wrap: break-word;
+            max-width: 100%;
+        }
+
+        .message.bot .message-bubble {
+            background: white;
+            color: #333;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .message.user .message-bubble {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        /* Typing Indicator - Simplified */
+        .typing-indicator {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 18px;
+            margin-left: 36px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            width: fit-content;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 3px;
+        }
+
+        .typing-dot {
+            width: 4px;
+            height: 4px;
+            background: #999;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-4px); }
+        }
+
+        /* Input Area - Simplified */
+        .chat-input {
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 20px;
+            outline: none;
+            font-size: 13px;
+            resize: none;
+            max-height: 60px;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .input-field:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .send-btn {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .send-btn:hover:not(:disabled) {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .send-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Suggestions - Simplified */
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .suggestion-chip {
+            padding: 6px 12px;
+            background: #e9ecef;
+            border: none;
+            border-radius: 12px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .suggestion-chip:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Scrollbar */
+        .chat-messages::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 2px;
+        }
+
+        /* Responsive - Mobile Friendly */
+        @media (max-width: 480px) {
+            .chat-container {
+                width: calc(100vw - 20px);
+                height: calc(100vh - 120px);
+                bottom: 85px;
+                right: 10px;
+            }
+            
+            .action-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chat-toggle {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+
+        /* Welcome tooltip */
+        .welcome-tooltip {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .welcome-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #333;
+        }
+
+        .welcome-tooltip.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <!-- Welcome Tooltip -->
+        <div class="welcome-tooltip" id="welcomeTooltip">
+            👋 Need help? Click to chat!
+        </div>
+        
+        <!-- Notification Badge -->
+        <div class="notification-badge" id="notificationBadge">1</div>
+        
+        <!-- Chat Toggle Button -->
+        <button class="chat-toggle" id="chatToggle" title="Click to chat with us!">
+            💬
+        </button>
+
+        <!-- Chat Container -->
+        <div class="chat-container" id="chatContainer">
+            <!-- Header -->
+            <div class="chat-header">
+                <div class="header-info">
+                    <div class="online-status"></div>
+                    <h1>👑 Royal School</h1>
+                </div>
+                <button class="close-btn" id="closeBtn" title="Close chat">×</button>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions" id="quickActions">
+                <div class="action-grid">
+                    <button class="action-btn" onclick="selectTopic('Admissions')">
+                        📝 Admissions
+                    </button>
+                    <button class="action-btn" onclick="selectTopic('Programs')">
+                        📚 Programs
+                    </button>
+                    <button class="action-btn" onclick="selectTopic('Contact')">
+                        📞 Contact
+                    </button>
+                    <button class="action-btn" onclick="selectTopic('Hours')">
+                        🕒 Hours
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="avatar bot-avatar">🤖</div>
+                    <div class="message-bubble">
+                        Hi there! 👋 I'm here to help with Royal School info. What would you like to know?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+                <span>Typing...</span>
+            </div>
+
+            <!-- Input Area -->
+            <div class="chat-input">
+                <div class="input-container">
+                    <textarea 
+                        class="input-field" 
+                        id="messageInput" 
+                        placeholder="Ask me anything..."
+                        rows="1"
+                        onkeydown="handleKeyPress(event)"
+                        oninput="autoResize(this)"
+                    ></textarea>
+                    <button class="send-btn" id="sendButton" onclick="sendMessage()" title="Send message">
+                        ➤
+                    </button>
+                </div>
+                <div class="suggestions" id="suggestions"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple Knowledge Base
+        const responses = {
+            'admissions': {
+                keywords: ['admission', 'apply', 'enroll', 'join'],
+                text: `📝 **ADMISSIONS INFO**
+
+🗓️ **Key Dates:**
+• Application Deadline: March 15th
+• Results: April 30th
+
+📋 **Required:**
+• Birth Certificate
+• School Records
+• Medical Records
+
+💰 **Fees:**
+• Application: ₹500
+• Admission: ₹5,000
+
+📞 **Contact:** 085319 63687`,
+                suggestions: ['Fee Details', 'Documents', 'Contact']
+            },
+
+            'programs': {
+                keywords: ['program', 'academic', 'courses', 'curriculum'],
+                text: `📚 **OUR PROGRAMS**
+
+🎓 **Elementary (K-5):**
+Math, Science, English, Arts
+
+🎯 **Middle School (6-8):**
+Advanced subjects + Technology
+
+🏆 **High School (9-12):**
+AP Courses + College Prep
+
+👨‍🏫 **Ratio:** 15:1 students per teacher`,
+                suggestions: ['STEM Program', 'Languages', 'Activities']
+            },
+
+            'contact': {
+                keywords: ['contact', 'phone', 'email', 'address'],
+                text: `📞 **CONTACT US**
+
+🏢 **Main Office:**
+• Phone: 085319 63686
+• Email: info@royalschool.edu
+
+👥 **Departments:**
+• Admissions: 085319 63687
+• Academic: 085319 63688
+
+⏰ **Hours:** Mon-Fri, 7:30 AM - 4:00 PM`,
+                suggestions: ['Visit Us', 'Email', 'Emergency']
+            },
+
+            'hours': {
+                keywords: ['hours', 'time', 'schedule', 'timing'],
+                text: `🕒 **SCHOOL HOURS**
+
+📚 **Classes:**
+• Elementary: 9:15 AM - 3:00 PM
+• Middle/High: 8:45 AM - 4:15 PM
+
+🏢 **Office:** 7:30 AM - 4:00 PM
+
+🚌 **Bus Service:** 7:00 AM & 3:30 PM`,
+                suggestions: ['Transportation', 'After School', 'Holidays']
+            }
+        };
+
+        // Widget State
+        let isOpen = false;
+        let isTyping = false;
+
+        // DOM Elements
+        const chatToggle = document.getElementById('chatToggle');
+        const chatContainer = document.getElementById('chatContainer');
+        const closeBtn = document.getElementById('closeBtn');
+        const notificationBadge = document.getElementById('notificationBadge');
+        const welcomeTooltip = document.getElementById('welcomeTooltip');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show welcome tooltip after 2 seconds
+            setTimeout(() => {
+                welcomeTooltip.classList.add('show');
+                setTimeout(() => {
+                    welcomeTooltip.classList.remove('show');
+                }, 4000);
+            }, 2000);
+        });
+
+        // Toggle Chat
+        function toggleChat() {
+            if (isOpen) {
+                closeChat();
+            } else {
+                openChat();
+            }
+        }
+
+        function openChat() {
+            isOpen = true;
+            chatContainer.classList.add('active');
+            chatToggle.classList.add('active');
+            chatToggle.innerHTML = '✕';
+            
+            // Hide notifications
+            notificationBadge.style.display = 'none';
+            welcomeTooltip.classList.remove('show');
+            
+            // Focus input
+            setTimeout(() => {
+                document.getElementById('messageInput').focus();
+            }, 300);
+        }
+
+        function closeChat() {
+            isOpen = false;
+            chatContainer.classList.remove('active');
+            chatToggle.classList.remove('active');
+            chatToggle.innerHTML = '💬';
+            
+            // Clear input
+            document.getElementById('messageInput').value = '';
+            document.getElementById('suggestions').innerHTML = '';
+        }
+
+        // Event Listeners
+        chatToggle.addEventListener('click', toggleChat);
+        closeBtn.addEventListener('click', closeChat);
+
+        // Message Functions
+        function selectTopic(topic) {
+            document.getElementById('quickActions').style.display = 'none';
+            addMessage(topic, true);
+            
+            setTimeout(() => {
+                const response = getResponse(topic);
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    addMessage(response.text, false, response.suggestions);
+                }, 800);
+            }, 200);
+        }
+
+        function addMessage(text, isUser = false, suggestions = []) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            
+            messageDiv.innerHTML = `
+                <div class="avatar ${isUser ? 'user-avatar' : 'bot-avatar'}">
+                    ${isUser ? '👤' : '🤖'}
+                </div>
+                <div class="message-bubble">${formatText(text)}</div>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Show suggestions
+            if (!isUser && suggestions.length > 0) {
+                showSuggestions(suggestions);
+            }
+        }
+
+        function formatText(text) {
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\n/g, '<br>')
+                .replace(/•/g, '&bull;');
+        }
+
+        function showSuggestions(suggestions) {
+            const suggestionsDiv = document.getElementById('suggestions');
+            suggestionsDiv.innerHTML = '';
+            
+            suggestions.forEach(suggestion => {
+                const chip = document.createElement('button');
+                chip.className = 'suggestion-chip';
+                chip.textContent = suggestion;
+                chip.onclick = () => {
+                    suggestionsDiv.innerHTML = '';
+                    addMessage(suggestion, true);
+                    setTimeout(() => {
+                        const response = getResponse(suggestion);
+                        showTyping();
+                        setTimeout(() => {
+                            hideTyping();
+                            addMessage(response.text, false, response.suggestions);
+                        }, 600);
+                    }, 200);
+                };
+                suggestionsDiv.appendChild(chip);
+            });
+        }
+
+        function getResponse(question) {
+            const lowerQuestion = question.toLowerCase();
+            
+            // Check responses
+            for (const [key, data] of Object.entries(responses)) {
+                if (data.keywords.some(keyword => lowerQuestion.includes(keyword))) {
+                    return data;
+                }
+            }
+            
+            // Default response
+            return {
+                text: `Thanks for your question! 😊 For detailed info, please contact us:
+
+📞 **Call:** 085319 63686
+📧 **Email:** info@royalschool.edu
+
+How else can I help?`,
+                suggestions: ['Contact', 'Admissions', 'Programs']
+            };
+        }
+
+        function showTyping() {
+            if (isTyping) return;
+            isTyping = true;
+            document.getElementById('typingIndicator').style.display = 'flex';
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTyping() {
+            isTyping = false;
+            document.getElementById('typingIndicator').style.display = 'none';
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const question = input.value.trim();
+            
+            if (!question) return;
+            
+            // Clear UI
+            document.getElementById('suggestions').innerHTML = '';
+            document.getElementById('quickActions').style.display = 'none';
+            
+            addMessage(question, true);
+            input.value = '';
+            input.style.height = 'auto';
+            
+            // Get response
+            setTimeout(() => {
+                showTyping();
+                setTimeout(() => {
+                    hideTyping();
+                    const response = getResponse(question);
+                    addMessage(response.text, false, response.suggestions);
+                }, 700);
+            }, 200);
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
+
+        function autoResize(element) {
+            element.style.height = 'auto';
+            element.style.height = Math.min(element.scrollHeight, 60) + 'px';
+        }
+
+        // Close chat when clicking outside
+        document.addEventListener('click', function(event) {
+            if (isOpen && !chatToggle.contains(event.target) && !chatContainer.contains(event.target)) {
+                // Optional: uncomment to close on outside click
+                // closeChat();
+            }
+        });
+    </script>
+</body>
+</html>
+  <script src="script.js"></script>
+</body>
+</html>
